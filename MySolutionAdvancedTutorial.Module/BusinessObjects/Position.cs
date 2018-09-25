@@ -12,20 +12,19 @@ using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 
-namespace MySolutionAdvancedTutorial.Module.BusinessObjects.Classes
+namespace MySolutionAdvancedTutorial.Module.BusinessObjects
 {
     [DefaultClassOptions]
-    [ModelDefault("Caption", "Task")]
-    public class DemoTask : Task
+    [System.ComponentModel.DefaultProperty("Title")]
+    public class Position : BaseObject
     {
-        public DemoTask(Session session) : base(session) { }
-        [Association("Contact-DemoTask")]
-        public XPCollection<Contact> Contacts
+        public Position(Session session) : base(session) { }
+        private string title;
+        public string Title
         {
-            get
-            {
-                return GetCollection<Contact>("Contacts");
-            }
+            get { return title; }
+            set { SetPropertyValue("Title", ref title, value); }
         }
     }
+
 }

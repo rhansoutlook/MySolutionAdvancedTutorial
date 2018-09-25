@@ -94,10 +94,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessObjects\Classes\Contact.cs" />
-    <Compile Include="BusinessObjects\Classes\DemoTask.cs" />
-    <Compile Include="BusinessObjects\Classes\Department.cs" />
-    <Compile Include="BusinessObjects\Classes\Position.cs" />
+    <Compile Include="BusinessObjects\Contact.cs" />
+    <Compile Include="BusinessObjects\DemoTask.cs" />
+    <Compile Include="BusinessObjects\Department.cs" />
+    <Compile Include="BusinessObjects\Position.cs" />
     <Compile Include="BusinessObjects\Enums\TitleOfCourtesy.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Module.cs">
@@ -138,6 +138,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Welcome.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BusinessObjects\Classes\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -12,19 +12,24 @@ using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 
-namespace MySolutionAdvancedTutorial.Module.BusinessObjects.Classes
+namespace MySolutionAdvancedTutorial.Module.BusinessObjects
 {
     [DefaultClassOptions]
     [System.ComponentModel.DefaultProperty("Title")]
-    public class Position : BaseObject
+    public class Department : BaseObject
     {
-        public Position(Session session) : base(session) { }
+        public Department(Session session) : base(session) { }
         private string title;
         public string Title
         {
             get { return title; }
             set { SetPropertyValue("Title", ref title, value); }
         }
+        private string office;
+        public string Office
+        {
+            get { return office; }
+            set { SetPropertyValue("Office", ref office, value); }
+        }
     }
-
 }
