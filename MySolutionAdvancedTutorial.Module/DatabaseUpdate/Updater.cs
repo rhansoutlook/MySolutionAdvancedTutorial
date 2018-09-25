@@ -12,7 +12,7 @@ using DevExpress.Xpo;
 using DevExpress.ExpressApp.Xpo;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.BaseImpl.PermissionPolicy;
-using MySolutionAdvancedTutorial.Module.BusinessObjects;
+using MySolutionAdvancedTutorial.Module.BusinessObjects.Classes;
 
 namespace MySolutionAdvancedTutorial.Module.DatabaseUpdate {
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/clsDevExpressExpressAppUpdatingModuleUpdatertopic.aspx

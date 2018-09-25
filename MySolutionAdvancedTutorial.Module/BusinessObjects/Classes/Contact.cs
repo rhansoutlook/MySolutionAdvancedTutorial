@@ -11,14 +11,24 @@ using System.Collections.Generic;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
+using MySolutionAdvancedTutorial.Module.BusinessObjects.Enums;
 
-namespace MySolutionAdvancedTutorial.Module.BusinessObjects
+namespace MySolutionAdvancedTutorial.Module.BusinessObjects.Classes
 {
     [DefaultClassOptions]
     public class Contact : Person
-    {
-        
+    {        
         public Contact(Session session) : base(session) { }
+
+        [Association("Contact-DemoTask")]
+        public XPCollection<DemoTask> Tasks
+        {
+            get
+            {
+                return GetCollection<DemoTask>("Tasks");
+            }
+        }
+
         private string webPageAddress;
         public string WebPageAddress
         {
@@ -37,6 +47,7 @@ namespace MySolutionAdvancedTutorial.Module.BusinessObjects
             get { return spouseName; }
             set { SetPropertyValue("SpouseName", ref spouseName, value); }
         }
+
         private TitleOfCourtesy titleOfCourtesy;
         public TitleOfCourtesy TitleOfCourtesy
         {
@@ -69,38 +80,5 @@ namespace MySolutionAdvancedTutorial.Module.BusinessObjects
             get { return position; }
             set { SetPropertyValue("Position", ref position, value); }
         }
-    }
-
-    [DefaultClassOptions]
-    [System.ComponentModel.DefaultProperty("Title")]
-    public class Department : BaseObject
-    {
-        public Department(Session session) : base(session) { }
-        private string title;
-        public string Title
-        {
-            get { return title; }
-            set { SetPropertyValue("Title", ref title, value); }
-        }
-        private string office;
-        public string Office
-        {
-            get { return office; }
-            set { SetPropertyValue("Office", ref office, value); }
-        }
-    }
-    [DefaultClassOptions]
-    [System.ComponentModel.DefaultProperty("Title")]
-    public class Position : BaseObject
-    {
-        public Position(Session session) : base(session) { }
-        private string title;
-        public string Title
-        {
-            get { return title; }
-            set { SetPropertyValue("Title", ref title, value); }
-        }
-    }
-
-    public enum TitleOfCourtesy { Dr, Miss, Mr, Mrs, Ms };
+    }   
 }
