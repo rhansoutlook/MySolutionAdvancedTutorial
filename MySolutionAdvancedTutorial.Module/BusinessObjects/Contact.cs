@@ -56,6 +56,51 @@ namespace MySolutionAdvancedTutorial.Module.BusinessObjects
             get { return notes; }
             set { SetPropertyValue("Notes", ref notes, value); }
         }
+
+        private Department department;
+        public Department Department
+        {
+            get { return department; }
+            set { SetPropertyValue("Department", ref department, value); }
+        }
+        private Position position;
+        public Position Position
+        {
+            get { return position; }
+            set { SetPropertyValue("Position", ref position, value); }
+        }
     }
+
+    [DefaultClassOptions]
+    [System.ComponentModel.DefaultProperty("Title")]
+    public class Department : BaseObject
+    {
+        public Department(Session session) : base(session) { }
+        private string title;
+        public string Title
+        {
+            get { return title; }
+            set { SetPropertyValue("Title", ref title, value); }
+        }
+        private string office;
+        public string Office
+        {
+            get { return office; }
+            set { SetPropertyValue("Office", ref office, value); }
+        }
+    }
+    [DefaultClassOptions]
+    [System.ComponentModel.DefaultProperty("Title")]
+    public class Position : BaseObject
+    {
+        public Position(Session session) : base(session) { }
+        private string title;
+        public string Title
+        {
+            get { return title; }
+            set { SetPropertyValue("Title", ref title, value); }
+        }
+    }
+
     public enum TitleOfCourtesy { Dr, Miss, Mr, Mrs, Ms };
 }
