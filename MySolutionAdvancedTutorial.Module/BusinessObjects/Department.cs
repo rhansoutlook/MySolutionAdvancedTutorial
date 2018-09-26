@@ -31,5 +31,14 @@ namespace MySolutionAdvancedTutorial.Module.BusinessObjects
             get { return office; }
             set { SetPropertyValue("Office", ref office, value); }
         }
+
+        [Association("Department-Contacts")]
+        public XPCollection<Contact> Contacts
+        {
+            get
+            {
+                return GetCollection<Contact>("Contacts");
+            }
+        }
     }
 }

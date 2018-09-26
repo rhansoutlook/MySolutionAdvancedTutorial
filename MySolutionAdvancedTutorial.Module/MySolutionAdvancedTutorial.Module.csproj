@@ -97,6 +97,7 @@
     <Compile Include="BusinessObjects\Contact.cs" />
     <Compile Include="BusinessObjects\DemoTask.cs" />
     <Compile Include="BusinessObjects\Department.cs" />
+    <Compile Include="BusinessObjects\Enums\Priority.cs" />
     <Compile Include="BusinessObjects\Position.cs" />
     <Compile Include="BusinessObjects\Enums\TitleOfCourtesy.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />

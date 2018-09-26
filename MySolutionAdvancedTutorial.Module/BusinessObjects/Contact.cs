@@ -13,12 +13,21 @@ using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using MySolutionAdvancedTutorial.Module.BusinessObjects.Enums;
 
-namespace MySolutionAdvancedTutorial.Module.BusinessObjects.Classes
+namespace MySolutionAdvancedTutorial.Module.BusinessObjects
 {
     [DefaultClassOptions]
     public class Contact : Person
     {        
         public Contact(Session session) : base(session) { }
+
+        private Contact manager;
+        [DataSourceProperty("Department.Contacts")]
+        [DataSourceCriteria("Position.Title = 'Manager' AND Oid != '@This.Oid'")]
+        public Contact Manager
+        {
+            get { return manager; }
+            set { SetPropertyValue("Manager", ref manager, value); }
+        }
 
         [Association("Contact-DemoTask")]
         public XPCollection<DemoTask> Tasks
@@ -69,6 +78,7 @@ namespace MySolutionAdvancedTutorial.Module.BusinessObjects.Classes
         }
 
         private Department department;
+        [Association("Department-Contacts")]
         public Department Department
         {
             get { return department; }
