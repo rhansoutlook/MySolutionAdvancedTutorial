@@ -20,6 +20,7 @@ namespace MySolutionAdvancedTutorial.Module.BusinessObjects
     {
         public Position(Session session) : base(session) { }
         private string title;
+        [RuleRequiredField(DefaultContexts.Save)]
         public string Title
         {
             get { return title; }
